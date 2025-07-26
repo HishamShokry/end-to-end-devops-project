@@ -7,9 +7,10 @@ app = Flask(__name__)
 
 # Database connection info with environment variables
 db_connection = pymysql.connect(
-    host=os.environ.get('DB_HOST', 'localhost'),
-    user=os.environ.get('DB_USER', 'root'),
-    password=os.environ.get('DB_PASSWORD', 'password'),
+    # host=os.environ.get('DB_HOST', 'localhost'),
+    host=os.environ.get('DB_HOST', 'host.docker.internal'),
+    user=os.environ.get('DB_USER', 'hisham'),
+    password=os.environ.get('DB_PASSWORD', '1234'),
     database=os.environ.get('DB_DATABASE', 'todo_db'),
     cursorclass=pymysql.cursors.DictCursor
 )
